@@ -1,0 +1,52 @@
+{
+  "name": "adol-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "ASUS a豆 随身WiFi 后台前端（全量重写）",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/strip-legal.mjs && node scripts/check-size.mjs",
+    "build:strict": "vue-tsc --noEmit && vite build && node scripts/strip-legal.mjs && node scripts/check-size.mjs",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.{ts,vue,css}\"",
+    "test": "vitest run",
+    "prepare": "node scripts/prepare.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "@vue/eslint-config-typescript": "^14.2.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

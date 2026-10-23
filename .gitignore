@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build artifacts & temp
+dist/
+*.local
+__pycache__/
+*.pyc
+*.staging/
+*.log
+
+# Editor & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
